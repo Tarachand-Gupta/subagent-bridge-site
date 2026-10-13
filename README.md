@@ -96,3 +96,5 @@ Build and asset checks run in GitHub Actions. Browser acceptance includes deskto
 - [Cloudflare Pages build settings](https://developers.cloudflare.com/pages/configuration/build-configuration/)
 - [Cloudflare Pages limits](https://developers.cloudflare.com/pages/platform/limits/)
 - [Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/get-started/)
+
+The interactive preview lets visitors change the parent, task, delegation policy, worker, model alternatives, thinking level, and rule toggle. It uses an illustrative local catalogue and simulated handoffs, without contacting a model provider. Third-party harness artwork is documented in `public/icons/SOURCES.md` and displayed in monochrome.
