@@ -5,14 +5,27 @@
   "type": "module",
   "description": "The independent, static Subagent Bridge product website",
   "license": "MIT",
-  "engines": { "node": ">=22.13.0" },
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "check": "node scripts/check.mjs",
-    "check:release": "node scripts/check.mjs --release"
+    "check:release": "node scripts/check.mjs --release",
+    "social:build": "node scripts/social.mjs"
   },
-  "devDependencies": { "vite": "8.3.4" },
-  "dependencies": { "@fontsource-variable/inter": "^5.2.8" }
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "vite": "8.3.4"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tarachand-Gupta/subagent-bridge-site.git"
+  },
+  "homepage": "https://tarachand-gupta.github.io/subagent-bridge-site/"
 }

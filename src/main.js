@@ -1,6 +1,7 @@
 import './style.css';
 import release from './release.json';
 
+const asset = path => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 const $ = (selector) => document.querySelector(selector);
 const scenarios = {
  review:{parent:'Codex',worker:'Pi',task:'a code review',policy:'can use'},
@@ -16,7 +17,7 @@ const exampleRule=key=>({...scenarios[key],models:[catalogue[scenarios[key].work
 let selected='review',rule=exampleRule('review'),enabled=true;
 let openMenu;
 const element=(tag,className,text)=>{const e=document.createElement(tag);e.className=className||'';if(text!==undefined)e.textContent=text;return e;};
-function agentIcon(name){const img=element('img','harness-icon');img.src=icons[name];img.alt='';img.width=24;img.height=24;return img;}
+function agentIcon(name){const img=element('img','harness-icon');img.src=asset(icons[name]);img.alt='';img.width=24;img.height=24;return img;}
 function closeMenu(focus=false){if(!openMenu)return;const {menu,button}=openMenu;menu.remove();button.setAttribute('aria-expanded','false');openMenu=null;if(focus)button.focus();}
 function placeMenu(){if(!openMenu)return;const {menu,button}=openMenu,r=button.getBoundingClientRect(),gap=8,margin=12;const below=innerHeight-r.bottom-gap-margin,above=r.top-gap-margin;menu.style.maxHeight=`${Math.max(100,Math.max(below,above))}px`;const height=menu.offsetHeight;menu.style.left=`${Math.max(margin,Math.min(r.left,innerWidth-menu.offsetWidth-margin))}px`;menu.style.top=`${below>=height||below>=above?r.bottom+gap:Math.max(margin,r.top-gap-height)}px`;}
 function picker(label,value,color,choices,onChange,{multiple=false,hint='',icon=false}={}){
@@ -52,11 +53,11 @@ $('#release-version').textContent=release.version;
 const mac=release.platforms.find(p=>p.id==='macos');
 const macUrl=httpsUrl(mac?.url);
 const download=element(macUrl?'a':'button','button mac-download-button');
-const apple=element('img','button-icon');apple.src='/icons/apple.svg';apple.alt='';apple.width=20;apple.height=20;download.append(apple,document.createTextNode('Download for macOS'));
+const apple=element('img','button-icon');apple.src=asset('/icons/apple.svg');apple.alt='';apple.width=20;apple.height=20;download.append(apple,document.createTextNode('Download for macOS'));
 if(macUrl){download.href=macUrl;download.rel='noopener';}else{download.disabled=true;download.setAttribute('aria-describedby','mac-release-status');}
 $('#downloads').append(download,element('p','mac-detail',mac?.detail||'Apple Silicon · .dmg'));
 const status=element('p','mac-release-status',macUrl?'Unsigned early preview.':mac?.status||'Public download being prepared');status.id='mac-release-status';$('#downloads').append(status);
 const sourceUrl=httpsUrl(release.sourceUrl);
-if(sourceUrl){for(const a of document.querySelectorAll('[data-source-link]')){a.href=sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','View Subagent Bridge source on GitHub');}$('#source-cta').textContent='Source on GitHub';$('#source-status').textContent='Explore the code, suggest an improvement, or help build the next integration. Found a bug? Open an issue or tag @am_tarachand on X.';}
+if(sourceUrl){for(const a of document.querySelectorAll('[data-source-link]')){a.href=sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','View Subagent Bridge website source on GitHub');}$('#source-cta').textContent='Website source on GitHub';$('#source-status').textContent='The website source is public on GitHub. The desktop app source and download are being prepared. Found a bug or have an idea? Tag @am_tarachand on X.';}
 const notesUrl=httpsUrl(release.releaseNotesUrl);if(notesUrl){$('#notes-link').href=notesUrl;$('#notes-link').hidden=false;}
 renderRule();

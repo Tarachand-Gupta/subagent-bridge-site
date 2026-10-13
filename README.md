@@ -19,39 +19,52 @@ npm run preview
 
 Vite produces the static site in `dist/`. The interactive rule editor is a local example: it does not access local harnesses, spend model credits, or change the desktop configuration. The preview's selected rules reset on reload.
 
-## Publish on Cloudflare Pages
+## Publish on GitHub Pages
 
-Create a GitHub repo from this independent checkout, push it, then connect it in Cloudflare Pages:
+Public website repository: https://github.com/Tarachand-Gupta/subagent-bridge-site
 
-- Framework: **Vite** (or None)
-- Build command: `npm run build`
-- Output directory: `dist`
-- Root directory: `/`
-- Node: 22 (also set in `.node-version`)
-- No secrets or runtime environment variables
+Website: https://tarachand-gupta.github.io/subagent-bridge-site/
 
-Or deploy the prebuilt site with your authenticated Cloudflare CLI:
+Push to `main` to build, validate and deploy using `.github/workflows/pages.yml`.
+GitHub Pages must use **GitHub Actions** as its source. No hosting credentials or
+custom domain are needed. The workflow obtains the repository base path from
+`configure-pages`; JavaScript-generated icons use the same Vite base.
 
-```sh
-npx wrangler pages deploy dist --project-name=subagent-bridge-site
-```
-
-## Alternatively, Workers Static Assets
-
-Cloudflare recommends Workers for new static sites. This site also includes a minimal `wrangler.jsonc` for an assets-only deployment:
+For a matching local deployment check:
 
 ```sh
-npm run build
-npx wrangler deploy
+PAGES_BASE_PATH=/subagent-bridge-site/ npm run build
+PAGES_BASE_PATH=/subagent-bridge-site/ npm run check
 ```
 
-No Worker script or paid API is required by this website. Cloudflare account limits still apply. Neither command above has been run for this project; no public deployment or Cloudflare resource has been created.
+Ordinary `npm run build` uses relative paths, so it also works at the root of a
+local preview server or Cloudflare Pages. Cloudflare build settings remain
+`npm run build` / `dist`; `wrangler.jsonc` optionally supports Workers Static Assets.
+GitHub Pages does not apply Cloudflare's `_headers` file. The site adds no
+analytics or tracking cookies; GitHub's hosting service records requests under
+its own privacy policy.
+
+## Sharing metadata
+
+`index.html` includes an absolute canonical URL, Open Graph website metadata,
+image dimensions and alt text, and an X large-image card with `@am_tarachand`.
+`public/social.png` is a committed 1200 × 630 PNG so crawlers do not need
+JavaScript or SVG support. Its editable source is `public/social.svg`:
+
+```sh
+npm run social:build
+```
+
+`robots.txt` and `sitemap.xml` identify the same production URL. If the domain or
+repository name changes, update these files, metadata, the 404 home link, and the
+canonical checks in `scripts/check.mjs` together. Social networks may cache
+previews; fetching valid metadata does not prove each network has refreshed it.
 
 ## Connect real downloads
 
 Edit **`src/release.json`**, then rebuild:
 
-- `sourceUrl`: public application repository (not this website’s repo, unless intended)
+- `sourceUrl`: currently this public website repository, labelled as website source. The desktop application repository remains private; update the link and its labels when app source is published.
 - `releaseNotesUrl`: the public release page
 - Each platform's `url`: an HTTPS installer asset URL on GitHub Releases or your R2 custom domain
 - Update `version`, package details, and platform notes with each verified release
@@ -78,14 +91,14 @@ index.html           Story, product illustrations, accessibility, FAQ
 src/main.js          Rule preview, source links, macOS release rendering
 src/style.css        Responsive layout, theme, reduced-motion support
 src/release.json     The only place to change platform download links
-public/              Original icon/social SVG, 404 page, Cloudflare headers
+public/              Icons, social PNG/SVG, sitemap, robots, 404, Cloudflare headers
 scripts/check.mjs    Release config + static asset checks
 wrangler.jsonc       Optional Workers Static Assets deployment
 ```
 
 The site loads no third-party scripts. The font is bundled locally. `_headers` supplies a restrictive CSP; use the production bundle, not Vite’s development server, when testing that policy. Inter is distributed under the SIL Open Font License by Fontsource. Brand names identify integrations and do not imply endorsement.
 
-For a production domain, add an absolute canonical URL and use a raster version of `public/social.svg` for social networks that do not support SVG preview images.
+The production canonical URL and PNG sharing card are configured and checked by `npm run check`.
 
 ## Verification
 

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tarachand-gupta.github.io/subagent-bridge-site/sitemap.xml

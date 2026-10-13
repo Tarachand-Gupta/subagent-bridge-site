@@ -14,5 +14,28 @@ let files=0,total=0;
 async function scan(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(entry.isDirectory())await scan(file);else{const size=(await stat(file)).size;assert(size<=25*1024*1024,`${file} exceeds Cloudflare Pages asset limit`);files++;total+=size;}}}
 await scan(root.pathname);
 assert(files<20000);
-const html=await readFile(new URL('index.html',root),'utf8');assert(html.includes('Your agents.'));assert(!html.includes('src="/src/'),'Production page must use bundled scripts');
+const html=await readFile(new URL('index.html',root),'utf8');
+assert(html.includes('Your favorite agents.<br><span>Now your subagents.</span>'));
+assert(!html.includes('src="/src/'),'Production page must use bundled scripts');
+const canonical='https://tarachand-gupta.github.io/subagent-bridge-site/';
+const metadata=Object.fromEntries([...html.matchAll(/<meta (?:property|name)="([^"]+)" content="([^"]+)"/g)].map(m=>[m[1],m[2]]));
+assert(html.includes(`<link rel="canonical" href="${canonical}"`));
+assert.equal(metadata['og:url'],canonical);
+assert.equal(metadata['og:image'],`${canonical}social.png`);
+assert.equal(metadata['twitter:image'],metadata['og:image']);
+assert.equal(metadata['twitter:card'],'summary_large_image');
+assert.equal(metadata['twitter:creator'],'@am_tarachand');
+for(const key of ['og:title','og:description','og:site_name','og:type','og:locale','og:image:alt','twitter:title','twitter:description','twitter:image:alt'])assert(metadata[key],`Missing ${key}`);
+const png=await readFile(new URL('social.png',root));
+assert.equal(png.subarray(1,4).toString(),'PNG');
+assert.equal(png.readUInt32BE(16),1200);
+assert.equal(png.readUInt32BE(20),630);
+assert(png.length<5*1024*1024);
+// Check every statically referenced asset at both root and repository-base builds.
+const base=process.env.PAGES_BASE_PATH||'./';
+for(const [,href] of html.matchAll(/(?:src|href)="([^"]+)"/g)){
+ if(/^(?:https?:|#)/.test(href))continue;
+ assert(href.startsWith(base),`Asset outside deployment base: ${href}`);
+ await stat(new URL(href.slice(base.length),root));
+}
 console.log(`OK: ${files} static files, ${(total/1024).toFixed(0)} KiB. Release links ${release.platforms.some(p=>p.url)?'configured':'intentionally unpublished'}.`);
