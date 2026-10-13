@@ -56,6 +56,6 @@ if(macUrl){download.href=macUrl;download.rel='noopener';}else{download.disabled=
 $('#downloads').append(download,element('p','mac-detail',mac?.detail||'Apple Silicon · .dmg'));
 const status=element('p','mac-release-status',macUrl?'Unsigned early preview.':mac?.status||'Public download being prepared');status.id='mac-release-status';$('#downloads').append(status);
 const sourceUrl=httpsUrl(release.sourceUrl);
-if(sourceUrl){for(const a of document.querySelectorAll('[data-source-link]')){a.href=sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','View Harness Bridge source on GitLab');}$('#source-cta').textContent='Source on GitLab';$('#source-status').textContent='Explore the code, suggest an improvement, or help build the next integration. Found a bug? Open an issue or tag @am_tarachand on X.';}
+if(sourceUrl){for(const a of document.querySelectorAll('[data-source-link]')){a.href=sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','View Harness Bridge source on GitHub');}$('#source-cta').textContent='Source on GitHub';$('#source-status').textContent='Explore the code, suggest an improvement, or help build the next integration. Found a bug? Open an issue or tag @am_tarachand on X.';}
 const notesUrl=httpsUrl(release.releaseNotesUrl);if(notesUrl){$('#notes-link').href=notesUrl;$('#notes-link').hidden=false;}
 renderRule();

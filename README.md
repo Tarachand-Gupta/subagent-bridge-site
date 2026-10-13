@@ -21,7 +21,7 @@ Vite produces the static site in `dist/`. The interactive rule editor is a local
 
 ## Publish on Cloudflare Pages
 
-Create a GitHub/GitLab repo from this independent checkout, push it, then connect it in Cloudflare Pages:
+Create a GitHub repo from this independent checkout, push it, then connect it in Cloudflare Pages:
 
 - Framework: **Vite** (or None)
 - Build command: `npm run build`
@@ -99,4 +99,4 @@ Build and asset checks run in GitHub Actions. Browser acceptance includes deskto
 
 The interactive preview lets visitors change the parent, task, delegation policy, worker, model alternatives, thinking level, and rule toggle. It uses an illustrative local catalogue, without contacting a model provider. Third-party harness artwork is documented in `public/icons/SOURCES.md` and displayed in monochrome.
 
-Only macOS has a download CTA. Windows and Linux display Coming soon. Until `sourceUrl` is set, GitLab icons navigate to the local source/contact section, which explicitly says the public repository is coming soon. Set `sourceUrl` to the real GitLab repository before publishing source links.
+Only macOS has a download CTA. Windows and Linux display Coming soon. Until `sourceUrl` is set, GitHub icons navigate to the local source/contact section, which explicitly says the public repository is coming soon. Set `sourceUrl` to the real GitHub repository before publishing source links.

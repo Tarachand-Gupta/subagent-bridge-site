@@ -39,7 +39,7 @@ Supersedes the simulated-session checks above: the chat simulation, timers, and 
 - Claude Code is selectable as a demo parent/worker, with illustrative Opus/Sonnet/Haiku model choices. Its live integration is explicitly unverified in the compatibility answer.
 - Agent strip includes Claude Code and a 10+ link to the official ACP registry. This labels the wider ecosystem rather than claiming every agent is a tested Bridge integration.
 - One macOS download CTA; it stays disabled with a clear release status until an installer URL is supplied. Windows/Linux show Coming soon.
-- GitLab identity appears in header, source/contact section, and footer. Unconfigured source links go to the coming-soon explanation.
+- GitHub identity appears in header, source/contact section, and footer. Unconfigured source links go to the coming-soon explanation.
 - X and LinkedIn links match the user-provided URLs; all identity assets load locally.
 - Desktop and 390px/320px screenshots reviewed. No horizontal overflow, including the compact header and social footer.
 - Vite production build and asset checks pass. No model calls, deployment, source publication, or downloads performed.
