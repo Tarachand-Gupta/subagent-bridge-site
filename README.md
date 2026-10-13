@@ -17,7 +17,7 @@ npm run check
 npm run preview
 ```
 
-Vite produces the static site in `dist/`. The interactive rule editor and job conversation are labelled simulations: they do not access local harnesses, spend model credits, or change the desktop configuration. The preview's selected rules reset on reload.
+Vite produces the static site in `dist/`. The interactive rule editor is a local example: it does not access local harnesses, spend model credits, or change the desktop configuration. The preview's selected rules reset on reload.
 
 ## Publish on Cloudflare Pages
 
@@ -75,7 +75,7 @@ This intentionally fails until a source URL and at least one installer URL are s
 
 ```text
 index.html           Story, product illustrations, accessibility, FAQ
-src/main.js          Rule preview, simulated job/follow-up, release rendering
+src/main.js          Rule preview, source links, macOS release rendering
 src/style.css        Responsive layout, theme, reduced-motion support
 src/release.json     The only place to change platform download links
 public/              Original icon/social SVG, 404 page, Cloudflare headers
@@ -89,7 +89,7 @@ For a production domain, add an absolute canonical URL and use a raster version 
 
 ## Verification
 
-Build and asset checks run in GitHub Actions. Browser acceptance includes desktop/mobile layout, switching examples, choosing a worker, disabling a rule, background simulation, follow-up context, FAQ expansion, keyboard controls, and the unpublished download state. Details are recorded in `QA.md` after live verification.
+Build and asset checks run in GitHub Actions. Browser acceptance includes desktop/mobile layout, switching examples, choosing a worker, disabling a rule, Claude Code selection, source and social links, FAQ expansion, keyboard controls, and the unpublished download state. Details are recorded in `QA.md` after live verification.
 
 ## References
 
@@ -97,4 +97,6 @@ Build and asset checks run in GitHub Actions. Browser acceptance includes deskto
 - [Cloudflare Pages limits](https://developers.cloudflare.com/pages/platform/limits/)
 - [Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/get-started/)
 
-The interactive preview lets visitors change the parent, task, delegation policy, worker, model alternatives, thinking level, and rule toggle. It uses an illustrative local catalogue and simulated handoffs, without contacting a model provider. Third-party harness artwork is documented in `public/icons/SOURCES.md` and displayed in monochrome.
+The interactive preview lets visitors change the parent, task, delegation policy, worker, model alternatives, thinking level, and rule toggle. It uses an illustrative local catalogue, without contacting a model provider. Third-party harness artwork is documented in `public/icons/SOURCES.md` and displayed in monochrome.
+
+Only macOS has a download CTA. Windows and Linux display Coming soon. Until `sourceUrl` is set, GitLab icons navigate to the local source/contact section, which explicitly says the public repository is coming soon. Set `sourceUrl` to the real GitLab repository before publishing source links.

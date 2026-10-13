@@ -31,3 +31,15 @@ No public deployment, remote Git repository, package upload, real model request,
 - Real harness assets load locally with a grayscale treatment; provenance is in public/icons/SOURCES.md. The extra details band has been removed.
 - Updated desktop, 390px and 320px layouts checked through the browser. No horizontal overflow; menus stay inside the viewport.
 - Build and asset checks pass. The example catalogue and thinking levels are illustrative; no real model capabilities are discovered by this static site.
+
+## Story and download revision — 13 October 2026
+
+Supersedes the simulated-session checks above: the chat simulation, timers, and handoff buttons have been removed. The third story is a static, three-step editorial card. The interactive rule editor remains.
+
+- Claude Code is selectable as a demo parent/worker, with illustrative Opus/Sonnet/Haiku model choices. Its live integration is explicitly unverified in the compatibility answer.
+- Agent strip includes Claude Code and a 10+ link to the official ACP registry. This labels the wider ecosystem rather than claiming every agent is a tested Bridge integration.
+- One macOS download CTA; it stays disabled with a clear release status until an installer URL is supplied. Windows/Linux show Coming soon.
+- GitLab identity appears in header, source/contact section, and footer. Unconfigured source links go to the coming-soon explanation.
+- X and LinkedIn links match the user-provided URLs; all identity assets load locally.
+- Desktop and 390px/320px screenshots reviewed. No horizontal overflow, including the compact header and social footer.
+- Vite production build and asset checks pass. No model calls, deployment, source publication, or downloads performed.

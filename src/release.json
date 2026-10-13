@@ -3,8 +3,29 @@
   "sourceUrl": null,
   "releaseNotesUrl": null,
   "platforms": [
-    { "id": "macos", "name": "macOS", "detail": "Apple Silicon · .dmg", "url": null, "status": "Public download being prepared", "note": "The current Mac build is an unsigned early preview. Requires Node.js 22.13+ and your coding agents installed separately." },
-    { "id": "windows", "name": "Windows", "detail": "Installer", "url": null, "status": "Not released yet", "note": "Packaging is configured. A Windows release will appear here after native testing." },
-    { "id": "linux", "name": "Linux", "detail": "Desktop package", "url": null, "status": "Not released yet", "note": "Packaging is configured. A Linux release will appear here after native testing." }
+    {
+      "id": "macos",
+      "name": "macOS",
+      "detail": "Apple Silicon \u00b7 .dmg",
+      "url": null,
+      "status": "Public download being prepared",
+      "note": "The current Mac build is an unsigned early preview. Requires Node.js 22.13+ and your coding agents installed separately."
+    },
+    {
+      "id": "windows",
+      "name": "Windows",
+      "detail": "Installer",
+      "url": null,
+      "status": "Coming soon",
+      "note": "Packaging is configured. A Windows release will appear here after native testing."
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "detail": "Desktop package",
+      "url": null,
+      "status": "Coming soon",
+      "note": "Packaging is configured. A Linux release will appear here after native testing."
+    }
   ]
 }
