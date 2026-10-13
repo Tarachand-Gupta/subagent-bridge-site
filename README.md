@@ -1,6 +1,6 @@
-# Harness Bridge website
+# Subagent Bridge website
 
-A separate, MIT-licensed product site built with **Vite + vanilla JavaScript + CSS**. No framework, server, accounts, analytics, or ChatGPT Sites dependency. Self-hosted Inter font. Inspired by Diskzy’s product-first storytelling; all copy and UI illustrations here are original to Harness Bridge.
+A separate, MIT-licensed product site built with **Vite + vanilla JavaScript + CSS**. No framework, server, accounts, analytics, or ChatGPT Sites dependency. Self-hosted Inter font. Inspired by Diskzy’s product-first storytelling; all copy and UI illustrations here are original to Subagent Bridge.
 
 ## Local development
 
@@ -33,7 +33,7 @@ Create a GitHub repo from this independent checkout, push it, then connect it in
 Or deploy the prebuilt site with your authenticated Cloudflare CLI:
 
 ```sh
-npx wrangler pages deploy dist --project-name=harness-bridge-site
+npx wrangler pages deploy dist --project-name=subagent-bridge-site
 ```
 
 ## Alternatively, Workers Static Assets

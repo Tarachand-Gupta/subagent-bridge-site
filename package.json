@@ -1,9 +1,9 @@
 {
-  "name": "harness-bridge-site",
+  "name": "subagent-bridge-site",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "The independent, static Harness Bridge product website",
+  "description": "The independent, static Subagent Bridge product website",
   "license": "MIT",
   "engines": { "node": ">=22.13.0" },
   "scripts": {

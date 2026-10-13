@@ -1,6 +1,6 @@
 # Harness identity assets
 
-These assets identify third-party harnesses; they are not Harness Bridge branding or an endorsement. Their trademarks and artwork belong to their respective owners, not the site's MIT license.
+These assets identify third-party harnesses; they are not Subagent Bridge branding or an endorsement. Their trademarks and artwork belong to their respective owners, not the site's MIT license.
 
 - Codex: unmodified `icon-codex-light.png` from the installed official OpenAI desktop application. https://openai.com/codex/ — brand guidelines: https://openai.com/brand/
 - Pi: https://pi.dev/favicon.svg
