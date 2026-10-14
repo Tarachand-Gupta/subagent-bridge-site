@@ -64,14 +64,14 @@ previews; fetching valid metadata does not prove each network has refreshed it.
 
 Edit **`src/release.json`**, then rebuild:
 
-- `sourceUrl`: currently this public website repository, labelled as website source. The desktop application repository remains private; update the link and its labels when app source is published.
+- `sourceUrl`: the public Subagent Bridge application repository. This website remains in its own repository.
 - `releaseNotesUrl`: the public release page
 - Each platform's `url`: an HTTPS installer asset URL on GitHub Releases or your R2 custom domain
 - Update `version`, package details, and platform notes with each verified release
 
 Null URLs render a clear availability message, not a fake download button. Source and release-note links remain hidden until configured. No operating-system guessing or automatic download. The user selects a platform explicitly.
 
-The current app has a tested macOS Apple Silicon build; public download is not configured. The local Mac installer is unsigned. Windows and Linux have packaging configuration, but are **not labelled released or tested**. Claude Code is explicitly deferred. Update these claims and the FAQ only after verifying a release.
+Version 0.2.0 links directly to the public macOS Apple Silicon DMG on GitHub Releases. It targets macOS 12+ and requires Node.js 22.13+, configured agents, and the separate Codex/Pi worker adapters described in the installation guide. The preview is ad-hoc signed for bundle integrity, without Developer ID signing or Apple notarization. The website shows this status beside the download. Windows and Linux have packaging configuration, but are **not labelled released or tested**. Claude Code is explicitly deferred. Update these claims and the FAQ only after verifying a release.
 
 Before announcing downloads:
 
