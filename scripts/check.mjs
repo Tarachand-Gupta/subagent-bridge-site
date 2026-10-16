@@ -22,6 +22,7 @@ assert(files<20000);
 const html=await readFile(new URL('index.html',root),'utf8');
 assert(html.includes('Your favorite agents.<br><span>Now your subagents.</span>'));
 assert(!html.includes('src="/src/'),'Production page must use bundled scripts');
+assert(html.includes('<details class="install-notes">'),'Install notes must be collapsed initially');
 assert(html.includes(release.cli.url),'Static CLI fallback must match release metadata');
 assert(html.includes(release.cli.guideUrl),'Static CLI guide must match release metadata');
 assert(html.includes(release.platforms.find(p=>p.id==='macos').url),'Static macOS fallback must match release metadata');

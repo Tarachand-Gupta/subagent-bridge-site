@@ -57,8 +57,8 @@ const download=element(macUrl?'a':'button','button mac-download-button');
 const apple=element('img','button-icon');apple.src=asset('/icons/apple.svg');apple.alt='';apple.width=20;apple.height=20;download.append(apple,document.createTextNode('Download for macOS'));
 if(macUrl){download.href=macUrl;download.rel='noopener';}else{download.disabled=true;download.setAttribute('aria-describedby','mac-release-status');}
 $('#downloads').append(download,element('p','mac-detail',mac?.detail||'Apple Silicon · .dmg'));
-const status=element('p','mac-release-status',mac?.status||'Public download being prepared');status.id='mac-release-status';$('#downloads').append(status);
-if(macUrl&&mac?.note)$('#downloads').append(element('p','mac-install-note',mac.note));
+$('#mac-release-status').textContent=mac?.status||'Public download being prepared';
+$('#mac-install-note').textContent=mac?.note||'';
 const cliUrl=httpsUrl(release.cli?.url),cliGuideUrl=httpsUrl(release.cli?.guideUrl);
 if(cliUrl&&cliGuideUrl){$('#cli-package-link').href=cliUrl;$('#cli-guide-link').href=cliGuideUrl;$('#cli-requirements').textContent=release.cli.requires;}else{$('#cli-download').hidden=true;}
 const sourceUrl=httpsUrl(release.sourceUrl);

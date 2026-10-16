@@ -357,11 +357,22 @@ html {scroll-behavior:auto}
   .agents-strip .agent-status {font-size:8px}
 }
 
-/* A quiet alternative to the desktop download, using the same local rules. */
-.cli-download {margin:25px auto 0;max-width:430px;color:#7d7285;font-size:12px;line-height:1.7}
-.cli-download p {margin:0 0 8px}
-.cli-download strong {font-weight:550;color:#64566e}
-.cli-download>div {display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px}
+/* Keep the download simple; installation details stay available on demand. */
+.download-section>img {margin-bottom:6px}
+.download-section h2 {margin:17px 0 0}
+.mac-download {margin-top:25px}
+.cli-download {margin:17px auto 0;font-size:12px;line-height:1.7}
 .cli-download a {color:#79618e;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#c8b9d5}
 .cli-download a:hover {color:var(--purple);text-decoration-color:currentColor}
-.cli-download small {display:block;font-size:10px;margin-top:9px;color:#8b7c96}
+.install-notes {max-width:450px;margin:20px auto 0;font-size:12px;line-height:1.75;color:#7d7285}
+.install-notes>summary {display:inline-flex;align-items:center;gap:8px;list-style:none;cursor:pointer;color:#8b7c96;font-size:11px}
+.install-notes>summary::-webkit-details-marker {display:none}
+.install-notes>summary>span {display:inline-block;transition:transform .16s ease}
+.install-notes[open]>summary>span {transform:rotate(180deg)}
+.install-notes>summary:hover {color:var(--purple)}
+.install-notes-content {text-align:left;margin-top:18px;padding:18px 20px;border:1px solid var(--line);border-radius:14px}
+.install-notes-content p {margin:0 0 12px;font-size:12px;color:#7d7285}
+.install-notes-content p:last-of-type {margin-bottom:0}
+.install-notes .release-label {justify-content:flex-start;margin:0 0 13px;font-size:11px;color:#8b7c96}
+.install-notes .release-links {justify-content:flex-start;flex-wrap:wrap;gap:10px 20px;margin-top:17px}
+@media(max-width:620px) {.install-notes {max-width:340px}.install-notes-content {padding:16px}.install-notes-content p {font-size:11px}}
