@@ -70,3 +70,8 @@ renderRule();
 function revealLinkedDetail(){if(location.hash==='#delivery')$('#delivery').open=true;}
 window.addEventListener('hashchange',revealLinkedDetail);
 revealLinkedDetail();
+
+const navigationMenu=document.querySelector('.nav-menu');
+navigationMenu.addEventListener('click',event=>{if(event.target.closest('a'))navigationMenu.open=false;});
+document.addEventListener('click',event=>{if(!navigationMenu.contains(event.target))navigationMenu.open=false;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&navigationMenu.open){navigationMenu.open=false;navigationMenu.querySelector('summary').focus();}});

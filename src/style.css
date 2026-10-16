@@ -402,3 +402,41 @@ html {scroll-behavior:auto}
 .install-notes .release-label {justify-content:flex-start;margin:0 0 13px;font-size:11px;color:#8b7c96}
 .install-notes .release-links {justify-content:flex-start;flex-wrap:wrap;gap:10px 20px;margin-top:17px}
 @media(max-width:620px) {.install-notes {max-width:340px}.install-notes-content {padding:16px}.install-notes-content p {font-size:11px}}
+
+/* Collapse secondary navigation before the brand and actions compete for space. */
+.site-header .brand,.site-header nav,.site-header nav>a {flex-shrink:0}
+.site-header nav>a {white-space:nowrap}
+.site-header nav {min-width:0}
+.nav-menu {position:relative;display:none;flex:none}
+.nav-menu>summary {list-style:none;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:7px;cursor:pointer;color:#82738d}
+.nav-menu>summary::-webkit-details-marker {display:none}
+.nav-menu>summary:hover,.nav-menu[open]>summary {background:#eee8f3;color:var(--purple)}
+.nav-menu svg {stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.nav-menu-links {position:absolute;z-index:30;right:0;top:calc(100% + 10px);width:210px;padding:8px;border:1px solid var(--line);border-radius:12px;background:#fffefd;box-shadow:0 12px 35px #44305518}
+.nav-menu-links>a {display:flex;justify-content:space-between;padding:12px 13px;border-radius:6px;font-size:13px;white-space:nowrap;color:#766780}
+.nav-menu-links>a:hover,.nav-menu-links>a:focus-visible {background:#f4eff8;color:var(--purple)}
+@media(max-width:960px) {
+ .site-header {height:88px;gap:16px}
+ .site-header .version,.site-header .nav-detail {display:none}
+ .site-header nav {gap:18px}
+ .nav-menu {display:block}
+}
+@media(max-width:620px) {
+ .site-header {height:76px;gap:10px}
+ .site-header nav {gap:8px}
+ .site-header>.brand {font-size:14px}
+ .site-header .source-nav {display:none}
+ .site-header .nav-download {padding:10px 11px;gap:7px}
+ .nav-menu-links {right:-110px;width:210px}
+ .demo-heading {align-items:flex-start;gap:12px}
+ .demo-footer {align-items:flex-start;flex-wrap:wrap}
+ .demo-caption {flex-wrap:wrap}
+}
+@media(max-width:360px) {
+ .site-header .nav-download {display:none}
+ .nav-menu-links {right:0}
+ .hero h1 {font-size:46px;letter-spacing:-2.8px}
+ .section-heading h2,.download-section h2 {font-size:30px;letter-spacing:-1.4px}
+ .rule-sentence {font-size:22px}
+ .flow-canvas {padding-inline:24px}
+}
