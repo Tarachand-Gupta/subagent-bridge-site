@@ -59,6 +59,8 @@ if(macUrl){download.href=macUrl;download.rel='noopener';}else{download.disabled=
 $('#downloads').append(download,element('p','mac-detail',mac?.detail||'Apple Silicon · .dmg'));
 const status=element('p','mac-release-status',mac?.status||'Public download being prepared');status.id='mac-release-status';$('#downloads').append(status);
 if(macUrl&&mac?.note)$('#downloads').append(element('p','mac-install-note',mac.note));
+const cliUrl=httpsUrl(release.cli?.url),cliGuideUrl=httpsUrl(release.cli?.guideUrl);
+if(cliUrl&&cliGuideUrl){$('#cli-package-link').href=cliUrl;$('#cli-guide-link').href=cliGuideUrl;$('#cli-requirements').textContent=release.cli.requires;}else{$('#cli-download').hidden=true;}
 const sourceUrl=httpsUrl(release.sourceUrl);
 if(sourceUrl){for(const a of document.querySelectorAll('[data-source-link]')){a.href=sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label','View Subagent Bridge source on GitHub');}$('#source-cta').textContent='Source on GitHub';}
 const notesUrl=httpsUrl(release.releaseNotesUrl);if(notesUrl){$('#notes-link').href=notesUrl;$('#notes-link').hidden=false;}

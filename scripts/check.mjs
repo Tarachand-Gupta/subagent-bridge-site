@@ -7,6 +7,11 @@ function url(value){if(value===null)return;const parsed=new URL(value);assert.eq
 assert.match(release.version,/^\d+\.\d+\.\d+/);
 assert.equal(new Set(release.platforms.map(p=>p.id)).size,release.platforms.length);
 for(const field of ['sourceUrl','releaseNotesUrl'])url(release[field]);
+assert(release.cli,'Configure the CLI release alongside the desktop release');
+for(const field of ['url','guideUrl']){assert(release.cli[field],`Missing CLI ${field}`);url(release.cli[field]);}
+assert.equal(release.cli.requires,'Node.js 22.13+');
+assert(release.cli.url.endsWith(`/v${release.version}/subagent-bridge-local-${release.version}.tgz`),'CLI package must match the desktop release');
+assert(release.cli.guideUrl.includes(`/v${release.version}/docs/cli.md`),'CLI guide must match the release');
 for(const p of release.platforms){for(const field of ['id','name','detail','status','note'])assert.equal(typeof p[field],'string');url(p.url);}
 if(isRelease){assert(release.sourceUrl,'Set sourceUrl before publishing the release website');assert(release.platforms.some(p=>p.url),'Add at least one published installer URL');}
 const root=new URL('../dist/',import.meta.url);
@@ -17,6 +22,9 @@ assert(files<20000);
 const html=await readFile(new URL('index.html',root),'utf8');
 assert(html.includes('Your favorite agents.<br><span>Now your subagents.</span>'));
 assert(!html.includes('src="/src/'),'Production page must use bundled scripts');
+assert(html.includes(release.cli.url),'Static CLI fallback must match release metadata');
+assert(html.includes(release.cli.guideUrl),'Static CLI guide must match release metadata');
+assert(html.includes(release.platforms.find(p=>p.id==='macos').url),'Static macOS fallback must match release metadata');
 const canonical='https://tarachand-gupta.github.io/subagent-bridge-site/';
 const metadata=Object.fromEntries([...html.matchAll(/<meta (?:property|name)="([^"]+)" content="([^"]+)"/g)].map(m=>[m[1],m[2]]));
 assert(html.includes(`<link rel="canonical" href="${canonical}"`));

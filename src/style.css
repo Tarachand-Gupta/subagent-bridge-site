@@ -356,3 +356,12 @@ html {scroll-behavior:auto}
   .agents-strip>div {gap:22px 25px}
   .agents-strip .agent-status {font-size:8px}
 }
+
+/* A quiet alternative to the desktop download, using the same local rules. */
+.cli-download {margin:25px auto 0;max-width:430px;color:#7d7285;font-size:12px;line-height:1.7}
+.cli-download p {margin:0 0 8px}
+.cli-download strong {font-weight:550;color:#64566e}
+.cli-download>div {display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px}
+.cli-download a {color:#79618e;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#c8b9d5}
+.cli-download a:hover {color:var(--purple);text-decoration-color:currentColor}
+.cli-download small {display:block;font-size:10px;margin-top:9px;color:#8b7c96}
