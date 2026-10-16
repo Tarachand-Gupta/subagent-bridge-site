@@ -71,7 +71,9 @@ Edit **`src/release.json`**, then rebuild:
 
 Null URLs render a clear availability message, not a fake download button. Source and release-note links remain hidden until configured. No operating-system guessing or automatic download. The user selects a platform explicitly.
 
-Version 0.2.0 links directly to the public macOS Apple Silicon DMG on GitHub Releases. It targets macOS 12+ and requires Node.js 22.13+, configured agents, and the separate Codex/Pi worker adapters described in the installation guide. The preview is ad-hoc signed for bundle integrity, without Developer ID signing or Apple notarization. The website shows this status beside the download. Windows and Linux have packaging configuration, but are **not labelled released or tested**. Claude Code is explicitly deferred. Update these claims and the FAQ only after verifying a release.
+The page explains orchestrator and subagent roles before a three-step workflow. Tested version details expand on demand. The logo strip illustrates the broader agent ecosystem, including Claude Code, Grok Build, Hermes, and Antigravity; it is not a tested-support list. The compatibility section separately describes the released native integrations, and Hermes is marked planned. Claude Code remains an explicitly unverified example in the rule dropdown. Website model choices are illustrative and do not prove provider access.
+
+Version 0.2.0 links directly to the public macOS Apple Silicon DMG on GitHub Releases. It targets macOS 12+ and requires Node.js 22.13+, configured agents, and the separate Codex/Pi worker adapters described in the installation guide. The preview is ad-hoc signed for bundle integrity, without Developer ID signing or Apple notarization. The website shows this status beside the download. Windows and Linux have packaging configuration, but are **not labelled released or tested**. Claude Code is explicitly deferred. Update these claims and the compatibility details only after verifying a release.
 
 Before announcing downloads:
 
@@ -87,7 +89,7 @@ This intentionally fails until a source URL and at least one installer URL are s
 ## Structure
 
 ```text
-index.html           Story, product illustrations, accessibility, FAQ
+index.html           Three-step story, compatibility details, download, FAQ
 src/main.js          Rule preview, source links, macOS release rendering
 src/style.css        Responsive layout, theme, reduced-motion support
 src/release.json     The only place to change platform download links
