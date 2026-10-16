@@ -69,13 +69,26 @@
     </div>
 
     <section id="story" class="how-it-works wrap" aria-labelledby="story-heading">
-      <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2 id="story-heading">Your agent leads.<br>Another agent lends a hand.</h2><p>The <strong>orchestrator</strong> is the agent you’re working with.<br>The <strong>subagent</strong> runs the task it receives in its own harness.</p></div>
-      <ol class="workflow-steps">
-        <li><span class="step-number">01</span><h3>Choose who can help.</h3><p>Pick a task, a subagent, and its model. Keep the tools, accounts, and provider settings you’ve already configured.</p></li>
-        <li><span class="step-number">02</span><h3>Apply your rule.</h3><p>Bridge connects supported agents and gives them the rule. First-time setup may need a reload or hook approval.</p></li>
-        <li><span class="step-number">03</span><h3>Keep working.</h3><p>Your orchestrator sends the task and context. The subagent works in the same project folder, then returns its result.</p></li>
-      </ol>
-      <p class="workflow-note">Independent work can continue in the background. Follow up with the same subagent while its session is alive. <a href="#delivery">How results come back ↗</a></p>
+      <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2 id="story-heading">Your agent leads.<br>Another agent lends a hand.</h2></div>
+      <div class="flow-canvas">
+        <ol class="workflow-steps">
+          <li class="flow-note note-team">
+            <span class="step-number">01</span><h3>Pick your team.</h3><p>A task, an agent, a model.</p>
+            <div class="note-example"><img class="harness-icon" src="/icons/codex.png" width="22" height="22" alt="" /><span>Codex</span><span class="note-handoff" aria-hidden="true">→</span><img class="harness-icon" src="/icons/pi.svg" width="20" height="20" alt="" /><span>Pi</span></div>
+            <svg class="flow-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M5 29C27 4 80 14 63 46C47 73 20 45 47 39C70 34 88 64 88 87M76 77L89 89L97 73" /></svg>
+          </li>
+          <li class="flow-note note-rule">
+            <span class="step-number">02</span><h3>Apply the rule.</h3><p>Tell your agent who can help.</p>
+            <div class="note-example note-policy"><span>can use</span><span aria-hidden="true">/</span><span>should use</span></div>
+            <svg class="flow-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M4 69C31 93 69 76 57 48C48 29 27 42 42 55C63 71 84 40 88 13M77 23L89 11L97 28" /></svg>
+          </li>
+          <li class="flow-note note-work">
+            <span class="step-number">03</span><h3>Keep working.</h3><p>Your subagent takes it from here.</p>
+            <div class="note-example note-result"><svg viewBox="0 0 28 28" width="25" height="25" fill="none" aria-hidden="true"><path d="M22 9C15 1 3 7 5 17S25 27 25 13M9 13L13 18L23 6" /></svg><span>The result comes back.</span></div>
+          </li>
+        </ol>
+      </div>
+      <p class="workflow-note"><a href="#delivery">How the handoff works <span aria-hidden="true">↗</span></a></p>
     </section>
 
     <section id="compatibility" class="compatibility wrap" aria-labelledby="compatibility-heading">
@@ -120,7 +133,7 @@
     <section id="questions" class="faq wrap" aria-labelledby="faq-heading"><div><span class="eyebrow">THE DETAILS</span><h2 id="faq-heading">Before you begin.</h2></div><div class="faq-list">
       <details><summary>Which account pays for the model?<span aria-hidden="true">+</span></summary><p>The subagent uses its harness’s existing account, API key, or provider. Subscription allowances and API charges follow that setup. Bridge does not provide model access or sell another subscription.</p></details>
       <details><summary>What stays on my computer?<span aria-hidden="true">+</span></summary><p>Bridge’s rules and coordination run locally. Your agents still send prompts and code to their configured model providers. A shared project folder does not copy the whole chat: the orchestrator supplies the context each task needs.</p></details>
-      <details id="delivery"><summary>How do results and follow-ups work?<span aria-hidden="true">+</span></summary><p>Supported integrations return results to the session that started the task. Codex hooks deliver during active turns or when a turn stops; an idle chat receives pending results next turn. Follow-ups reuse the same worker conversation while its process is alive. Restarting the harness ends that continuity.</p></details>
+      <details id="delivery"><summary>How do results and follow-ups work?<span aria-hidden="true">+</span></summary><p>Your main agent (the orchestrator) sends a task and the context it needs. The subagent works in the same project folder using its own harness, tools, and account. Independent work can continue in the background. First-time setup may need a reload or hook approval. Supported integrations return results to the session that started the task. Codex hooks deliver during active turns or when a turn stops; an idle chat receives pending results next turn. Follow-ups reuse the same worker conversation while its process is alive. Restarting the harness ends that continuity.</p></details>
       <details><summary>What do “can use” and “should use” mean?<span aria-hidden="true">+</span></summary><p>“Can use” lets the orchestrator decide whether to delegate. “Should use” instructs it to delegate matching tasks; it cannot guarantee a model will obey. Multiple agents or models are alternatives: the orchestrator picks one of each per task. Bridge enforces those allowed choices when a task runs.</p></details>
     </div></section>
   </main>

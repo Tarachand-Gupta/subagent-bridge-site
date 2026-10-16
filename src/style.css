@@ -264,11 +264,28 @@ html {scroll-behavior:auto}
 .section-heading {max-width:670px}
 .section-heading p {font-size:15px;color:#7d7285;line-height:1.8}
 .section-heading strong {font-weight:550;color:#5c5262}
-.workflow-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;list-style:none;padding:0;margin:0}
-.step-number {display:block;font-size:12px;font-weight:550;color:var(--purple);margin-bottom:15px}
-.workflow-steps h3 {font-size:20px;letter-spacing:-.6px;font-weight:550;margin:0 0 12px}
-.workflow-steps p {font-size:14px;line-height:1.8;margin:0;color:#7d7285}
-.workflow-note {font-size:12px;line-height:1.8;color:#7d7285;margin:27px auto 0;max-width:810px;text-align:center}
+.flow-canvas {padding:46px 40px 42px;border-radius:24px;background-color:#f4f1ec;background-image:radial-gradient(#c8bdce70 .8px,transparent .8px);background-size:19px 19px;isolation:isolate}
+.workflow-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px;list-style:none;padding:0;margin:0;align-items:start}
+.flow-note {position:relative;padding:25px 23px 23px;background:#fbf8ff;transform:rotate(-2deg);box-shadow:0 2px 3px #40304309,0 13px 18px -17px #40304355;border-radius:2px 3px 13px 3px;min-width:0}
+.flow-note::before {content:"";position:absolute;width:58px;height:17px;top:-8px;left:calc(50% - 29px);background:#ded6e99c;transform:rotate(3deg)}
+.note-rule {margin-top:38px;background:#fff9ec;transform:rotate(1.6deg)}
+.note-rule::before {background:#e9dfbf9c;transform:rotate(-4deg)}
+.note-work {margin-top:7px;background:#f1f8f0;transform:rotate(-1deg)}
+.note-work::before {background:#cfe0cc9c;transform:rotate(5deg)}
+.step-number {display:inline-flex;align-items:center;justify-content:center;width:30px;height:29px;border:1px solid #ad99c6;border-radius:49% 43% 51% 41%;color:#8a6ba9;font-size:11px;letter-spacing:.5px;margin-bottom:17px;transform:rotate(-5deg)}
+.note-rule .step-number {color:#ae8753;border-color:#c7b185}
+.note-work .step-number {color:#65866b;border-color:#9cb29c}
+.workflow-steps h3 {font-size:20px;letter-spacing:-.6px;font-weight:550;margin:0 0 10px;line-height:1.25}
+.workflow-steps p {font-size:12px;line-height:1.65;margin:0;color:#7d7285;min-height:40px}
+.note-example {display:flex;align-items:center;gap:7px;margin-top:17px;font-size:11px;font-weight:500;color:#716478;white-space:nowrap}
+.note-example .harness-icon {width:20px;height:20px;object-fit:contain}
+.note-example .note-handoff {font-size:21px;font-weight:300;margin:0 2px;color:#9b89ad}
+.note-policy {gap:8px;color:#9a7953}
+.note-policy span:not(:nth-child(2)) {border-bottom:1px solid #c9aa7c;padding-bottom:3px}
+.note-result {gap:7px;color:#63826b}
+.note-result svg {stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.flow-arrow {position:absolute;width:65px;height:96px;left:calc(100% + 1px);top:65px;overflow:visible;stroke:#a497af;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.workflow-note {font-size:12px;line-height:1.8;color:#7d7285;margin:20px auto 0;text-align:center}
 .workflow-note a,.coverage-note a {color:#79618e;text-decoration:underline;text-underline-offset:4px}
 .compatibility {display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px 60px;padding:36px 0 30px;align-items:start}
 .compatibility-intro h2 {font-size:32px;font-weight:550;letter-spacing:-1.4px;line-height:1.2;margin:16px 0}
@@ -296,7 +313,12 @@ html {scroll-behavior:auto}
 .open-source p {font-size:13px;color:#7d7285}
 
 @media(max-width:900px) {
-  .workflow-steps {gap:28px}
+  .flow-canvas {padding:37px 25px 32px}
+  .workflow-steps {gap:39px}
+  .flow-note {padding:21px 16px}
+  .workflow-steps h3 {font-size:18px}
+  .flow-arrow {width:39px}
+  .note-example {font-size:10px;gap:5px}
   .compatibility {grid-template-columns:1fr;gap:15px}
   .compatibility-intro p {max-width:620px}
   .compatibility-list {margin-top:15px}
@@ -312,12 +334,16 @@ html {scroll-behavior:auto}
   .how-it-works {padding:15px 0 32px}
   .section-heading {margin-bottom:30px}
   .section-heading p {font-size:13px;max-width:none}
-  .workflow-steps {grid-template-columns:1fr;gap:27px}
-  .workflow-steps li {padding-left:39px;position:relative}
-  .step-number {position:absolute;top:5px;left:0;margin:0;font-size:11px}
-  .workflow-steps h3 {font-size:19px;margin-bottom:8px}
-  .workflow-steps p {font-size:13px}
-  .workflow-note {text-align:left;margin-top:26px;font-size:11px}
+  .flow-canvas {padding:35px 30px 32px;max-width:410px;margin-inline:auto}
+  .workflow-steps {grid-template-columns:1fr;gap:40px;max-width:290px;margin-inline:auto}
+  .flow-note {padding:23px 24px;margin-top:0}
+  .step-number {position:static;margin-bottom:13px;font-size:11px}
+  .workflow-steps h3 {font-size:22px;margin-bottom:8px}
+  .workflow-steps p {font-size:13px;min-height:0}
+  .note-example {font-size:11px;margin-top:15px}
+  .flow-arrow {width:45px;height:44px;top:calc(100% + 1px);left:auto;right:9px;transform:rotate(20deg)}
+  .note-rule .flow-arrow {left:10px;right:auto;transform:rotate(115deg)}
+  .workflow-note {margin-top:19px;font-size:11px}
   .compatibility {padding:25px 0 10px}
   .compatibility-intro h2 {font-size:29px}
   .compatibility-intro p {font-size:13px;margin-bottom:14px}
