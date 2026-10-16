@@ -16,3 +16,11 @@ Added 2026-10-13:
 - LinkedIn: Simple Icons v13 (CC0), https://cdn.jsdelivr.net/npm/simple-icons@13/icons/linkedin.svg
 
 Original vendor marks are retained; monochrome styling is applied with CSS. Trademark rights remain with their owners.
+
+
+Added 2026-10-16:
+- Hermes: official site favicon, https://hermes-agent.nousresearch.com/marketing-static/assets/hermes-agent/icon.png (48 × 48 PNG). Source site: https://hermes-agent.nousresearch.com/. The upstream repository is MIT licensed, but this favicon is identified as vendor artwork, not relicensed under the website's MIT license.
+- Grok Build: unmodified 600 × 600 black SpaceXAI symbol used in the official `xai-org/grok-build` README, https://media.x.ai/v1/website/spacexai-symbol-black-transparent-6435cf42.png. Reference: https://github.com/xai-org/grok-build. The repository's Apache-2.0 license does not grant trademark rights.
+- Antigravity: official press asset “Icon — One Color”, https://antigravity.google/assets/image/brand/antigravity-icon__one-color.svg. Reference: https://antigravity.google/press. Google artwork/trademarks remain Google's; this asset is used only to identify the product.
+
+These additional marks identify the broader agent ecosystem, not a claim of tested Bridge support. Release coverage is described separately. All assets are served locally and use the same monochrome CSS treatment.

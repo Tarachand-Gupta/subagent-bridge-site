@@ -67,11 +67,14 @@ Edit **`src/release.json`**, then rebuild:
 - `sourceUrl`: the public Subagent Bridge application repository. This website remains in its own repository.
 - `releaseNotesUrl`: the public release page
 - Each platform's `url`: an HTTPS installer asset URL on GitHub Releases or your R2 custom domain
+- `cli.url` and `cli.guideUrl`: the CLI tarball and versioned usage guide
 - Update `version`, package details, and platform notes with each verified release
 
 Null URLs render a clear availability message, not a fake download button. Source and release-note links remain hidden until configured. No operating-system guessing or automatic download. The user selects a platform explicitly.
 
-Version 0.2.0 links directly to the public macOS Apple Silicon DMG on GitHub Releases. It targets macOS 12+ and requires Node.js 22.13+, configured agents, and the separate Codex/Pi worker adapters described in the installation guide. The preview is ad-hoc signed for bundle integrity, without Developer ID signing or Apple notarization. The website shows this status beside the download. Windows and Linux have packaging configuration, but are **not labelled released or tested**. Claude Code is explicitly deferred. Update these claims and the FAQ only after verifying a release.
+The page explains orchestrator and subagent roles before a three-step workflow. Tested version details expand on demand. The logo strip illustrates the broader agent ecosystem, including Claude Code, Grok Build, Hermes, and Antigravity; it is not a tested-support list. The compatibility section separately describes the four native parent integrations and the 27-agent candidate catalog. Catalog membership does not establish ACP or provider access, and Hermes is marked planned. Claude Code remains an explicitly unverified example in the rule dropdown. Website model choices are illustrative and do not prove provider access.
+
+Version 0.3.1 links directly to the macOS Apple Silicon DMG and installable CLI tarball on GitHub Releases. The CLI shares the desktop app’s applied rules and saved draft; its guide covers installation, editing, validation, and conflict protection. The desktop build targets macOS 12+. Both interfaces require Node.js 22.13+, configured agents, and the separate Codex/Pi worker adapters described in the installation guide. The preview is ad-hoc signed for bundle integrity, without Developer ID signing or Apple notarization. The website keeps signing, first-launch guidance, Node requirements, version, license, and platform availability in the collapsed Install notes below the download. Windows and Linux have packaging configuration, but are **not labelled released or tested**. Claude Code is explicitly deferred. Update these claims and the compatibility details only after verifying a release.
 
 Before announcing downloads:
 
@@ -87,8 +90,8 @@ This intentionally fails until a source URL and at least one installer URL are s
 ## Structure
 
 ```text
-index.html           Story, product illustrations, accessibility, FAQ
-src/main.js          Rule preview, source links, macOS release rendering
+index.html           Three-step story, compatibility details, download, FAQ
+src/main.js          Rule preview, source links, macOS and CLI downloads
 src/style.css        Responsive layout, theme, reduced-motion support
 src/release.json     The only place to change platform download links
 public/              Icons, social PNG/SVG, sitemap, robots, 404, Cloudflare headers
@@ -112,4 +115,4 @@ Build and asset checks run in GitHub Actions. Browser acceptance includes deskto
 
 The interactive preview lets visitors change the parent, task, delegation policy, worker, model alternatives, thinking level, and rule toggle. It uses an illustrative local catalogue, without contacting a model provider. Third-party harness artwork is documented in `public/icons/SOURCES.md` and displayed in monochrome.
 
-Only macOS has a download CTA. Windows and Linux display Coming soon. Until `sourceUrl` is set, GitHub icons navigate to the local source/contact section, which explicitly says the public repository is coming soon. Set `sourceUrl` to the real GitHub repository before publishing source links.
+The download section shows the app mark, headline, macOS button, a single Apple Silicon detail line, and a secondary CLI download. Install notes expands to show the guides, release notes, requirements, signing details, and Windows/Linux availability. Header, source section, and footer GitHub links point to the public Subagent Bridge repository configured in `sourceUrl`.

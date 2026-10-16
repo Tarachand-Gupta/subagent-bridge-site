@@ -31,59 +31,113 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
     <a class="brand" href="#" aria-label="Subagent Bridge home"><img src="/favicon.svg" width="32" height="32" alt="" />Subagent Bridge <span class="version">preview</span></a>
-    <nav aria-label="Main navigation"><a class="nav-detail" href="#story">How it works</a><a class="nav-detail" href="#questions">Questions</a><a class="source-nav" data-source-link href="https://github.com/Tarachand-Gupta/subagent-bridge" aria-label="Source on GitHub"><img class="social-icon" src="/icons/github.svg" width="21" height="21" alt="" /><span>Source</span></a><a class="button small" href="#download"><img class="button-icon" src="/icons/apple.svg" width="18" height="18" alt="" />Get for Mac</a></nav>
+    <nav aria-label="Main navigation"><details class="nav-menu"><summary aria-label="More navigation"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7H20M4 12H20M4 17H20" /></svg></summary><div class="nav-menu-links"><a href="#story">How it works</a><a href="#compatibility">Compatibility</a><a href="#questions">Questions</a><a data-source-link href="https://github.com/Tarachand-Gupta/subagent-bridge">GitHub <span aria-hidden="true">↗</span></a><a href="#download">Get for Mac <span aria-hidden="true">↓</span></a></div></details><a class="nav-detail" href="#story">How it works</a><a class="nav-detail" href="#compatibility">Compatibility</a><a class="source-nav" data-source-link href="https://github.com/Tarachand-Gupta/subagent-bridge" aria-label="Source on GitHub"><img class="social-icon" src="/icons/github.svg" width="21" height="21" alt="" /><span>Source</span></a><a class="button small nav-download" href="#download"><img class="button-icon" src="/icons/apple.svg" width="18" height="18" alt="" />Get for Mac</a></nav>
   </header>
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-heading">
-      <div class="eyebrow"><span class="status-dot"></span>A little bridge between your coding agents</div>
+      <div class="eyebrow"><span class="status-dot"></span>Cross-agent delegation, on your machine</div>
       <h1 id="hero-heading">Your favorite agents.<br><span>Now your subagents.</span></h1>
-      <p class="hero-copy">Use other coding agents as subagents—without leaving your own.</p>
+      <p class="hero-copy">Let the agent you’re working with hand a task to another.<br class="desktop-break"> Each subagent uses its own tools, model, and account.</p>
       <div class="hero-actions"><a class="button" href="#download"><img class="button-icon" src="/icons/apple.svg" width="18" height="18" alt="" />Get Subagent Bridge</a><a class="text-link" href="#playground">Try the rule editor <span aria-hidden="true">↓</span></a></div>
-      <p class="hero-note">A local desktop app. MIT licensed. Your agents’ own accounts.</p>
+      <p class="hero-note">Open-source desktop app · macOS preview · No Bridge account</p>
     </section>
 
     <section id="playground" class="playground wrap" aria-label="Interactive Subagent Bridge preview">
       <div class="demo-window">
         <div class="demo-titlebar"><div class="traffic-lights" aria-hidden="true"><i></i><i></i><i></i></div><span><img src="/mark.svg" alt="" width="21" height="21" /> Subagent Bridge</span><span class="demo-tag">INTERACTIVE PREVIEW</span></div>
         <div class="demo-content">
-          <div class="demo-heading"><div><h2>Who should do what?</h2><p>Your workflow, in a sentence.</p></div><span class="local-label"><span class="status-dot"></span>On your machine</span></div>
+          <div class="demo-heading"><div><h2>Who should do what?</h2><p>A rule for the agent you already use.</p></div><span class="local-label">Try a local example</span></div>
           <div class="scenario-tabs" role="group" aria-label="Example rule"><button data-scenario="review" aria-pressed="true">A second opinion</button><button data-scenario="research" aria-pressed="false">A little research</button><button data-scenario="build" aria-pressed="false">An extra pair of hands</button></div>
           <div class="demo-rule"><div class="rule-top"><span>Rule 1</span><button id="demo-enabled" class="switch" role="switch" aria-checked="true" aria-label="Enable example rule"><span></span></button></div><div id="rule-sentence" class="rule-sentence"></div></div>
           <div class="demo-footer"><span id="demo-rule-status" role="status">Example rule · nothing is applied to your agents</span><button id="reset-rule" class="text-link reset-rule">Reset example <span aria-hidden="true">↺</span></button></div>
         </div>
       </div>
-      <p class="demo-caption"><span aria-hidden="true">↖</span> Change every choice. Make the rule your own. <span>It’s a demo, not a screenshot.</span></p>
+      <p class="demo-caption">Click any underlined choice. <span>Example models only; this demo never starts an agent.</span></p>
     </section>
-    <div class="agents-strip wrap"><p>Bring the tools you already reach for.</p><div><span><img class="harness-icon" src="/icons/codex.png" width="28" height="28" alt="" />Codex</span><span><img class="harness-icon" src="/icons/pi.svg" width="28" height="28" alt="" />Pi</span><span><img class="harness-icon" src="/icons/opencode.png" width="28" height="28" alt="" />OpenCode</span><span><img class="harness-icon" src="/icons/deepseek.ico" width="28" height="28" alt="" />DeepSeek</span><span><img class="harness-icon" src="/icons/claude.png" width="28" height="28" alt="" />Claude Code</span><a class="ecosystem-link" href="https://agentclientprotocol.com/registry" target="_blank" rel="noopener noreferrer" aria-label="Explore 10 plus agents in the ACP ecosystem">10+ <span>in ACP</span></a></div><p class="ecosystem-note">An open ecosystem, growing one integration at a time. <a href="#questions">See current compatibility ↗</a></p></div>
+    <div class="agents-strip wrap" aria-label="Agent ecosystem; current release coverage is described below">
+      <p>From coding agents to personal agents.</p>
+      <div>
+        <span><img class="harness-icon" src="/icons/codex.png" width="28" height="28" alt="" />Codex</span>
+        <span><img class="harness-icon" src="/icons/pi.svg" width="28" height="28" alt="" />Pi</span>
+        <span><img class="harness-icon" src="/icons/opencode.png" width="28" height="28" alt="" />OpenCode</span>
+        <span><img class="harness-icon" src="/icons/deepseek.ico" width="28" height="28" alt="" />DeepSeek</span>
+        <span title="Claude Code integration is deferred and not live-tested."><img class="harness-icon" src="/icons/claude.png" width="28" height="28" alt="" />Claude Code</span>
+        <span title="Grok Build is a registry candidate; an installed adapter still needs discovery and a live task check."><img class="harness-icon" src="/icons/grok-build.png" width="28" height="28" alt="" />Grok Build</span>
+        <span title="Hermes integration is planned; not included in v0.3.1."><img class="harness-icon" src="/icons/hermes.png" width="28" height="28" alt="" />Hermes<small class="agent-status">Planned</small></span>
+        <span title="Antigravity is a registry candidate; an installed adapter still needs discovery and a live task check."><img class="harness-icon" src="/icons/antigravity.svg" width="28" height="28" alt="" />Antigravity</span>
+      </div>
+    </div>
 
-    <section id="story" class="story wrap" aria-labelledby="story-heading">
-      <div class="section-heading"><span class="eyebrow">LESS SWITCHING. MORE BUILDING.</span><h2 id="story-heading">Good at different things.<br>Better at working together.</h2><p>You already have your favorite agents. Now they can ask each other for help.</p></div>
-      <article class="story-row">
-        <div class="story-copy"><span class="chapter">01 / BRING YOUR AGENTS</span><h3>Keep the setup<br>you’ve made your own.</h3><p>One agent for the big picture. Another for research. A different model for a careful review. Bridge discovers your installed harnesses and the models they advertise.</p><p class="aside-copy">Each worker keeps its own tools, provider settings, and account. Bridge doesn’t sell you another model subscription.</p></div>
-        <div class="visual connections-visual" aria-label="Illustration: Codex, Pi, OpenCode, and DeepSeek connected to Subagent Bridge"><div class="connect-top"><span class="mini-agent"><img class="harness-icon" src="/icons/codex.png" width="28" height="28" alt="" /> <b>Codex</b></span><span class="mini-agent"><img class="harness-icon" src="/icons/pi.svg" width="28" height="28" alt="" /> <b>Pi</b></span></div><div class="connection-lines" aria-hidden="true"><span></span><span></span></div><div class="hub"><img src="/favicon.svg" width="48" height="48" alt="" /><div>Subagent Bridge<small>The right agent for the task</small></div></div><div class="connection-lines lower" aria-hidden="true"><span></span><span></span></div><div class="connect-bottom"><span class="mini-agent"><img class="harness-icon" src="/icons/opencode.png" width="28" height="28" alt="" /> <b>OpenCode</b></span><span class="mini-agent"><img class="harness-icon" src="/icons/deepseek.ico" width="28" height="28" alt="" /> <b>DeepSeek</b></span></div><div class="visual-caption"><span class="status-dot"></span>Their harnesses. Their models. Your choice.</div></div>
-      </article>
-      <article class="story-row reverse">
-        <div class="story-copy"><span class="chapter">02 / MAKE THE INTRODUCTION</span><h3>A rule you can read.<br>A workflow you can trust.</h3><p>Choose who can delegate, what they need help with, and who should take it. Pick a model and thinking level for the task, or leave the choice to your agent.</p><p class="aside-copy">“Can use” gives your agent a choice. “Should use” tells it to delegate matching tasks. Save a draft, then apply when you’re ready.</p></div>
-        <div class="visual rules-visual"><div class="paper-label">YOUR RULE, YOUR CALL</div><p>When <span class="purple">Codex</span> needs <span class="orange">a review</span>, it <span class="orange">should use</span> <span class="blue">Pi / Qwen3.8 Max</span> in <span class="green">its own harness.</span></p><div class="rule-annotation"><svg aria-hidden="true" viewBox="0 0 52 38"><path d="M45 3C43 26 28 33 6 27m0 0 9-5M6 27l7 8"/></svg><span>No config file gymnastics.</span></div><div class="paper-footer"><span>Model <b>Qwen3.8 Max</b></span><span>Thinking <b>High</b></span></div></div>
-      </article>
-      <article class="story-row">
-        <div class="story-copy"><span class="chapter">03 / KEEP YOUR PLACE</span><h3>A second perspective.<br>Without a second start.</h3><p>You’re building a feature in Codex. Let Pi look for edge cases while you finish the implementation. Both work in the same project, with the tools they already know.</p><p class="aside-copy">When the review comes back, ask a follow-up in the same worker conversation. The task’s context stays with it, so you can pick up where you left off.</p></div>
-        <div class="handoff-note"><span class="paper-label">ONE PROJECT. A SHARED THREAD OF WORK.</span><ol><li><span>01</span><div><h4>Give the review a home.</h4><p>Send a clear task and the relevant context to a worker in your project folder.</p></div></li><li><span>02</span><div><h4>Carry on with your part.</h4><p>The worker runs in the background. Your main agent can continue the independent work.</p></div></li><li><span>03</span><div><h4>Bring the findings back.</h4><p>Use the result in the parent session, then keep talking to the same worker if you need more.</p></div></li></ol><a class="text-link" href="#questions">How delivery works <span aria-hidden="true">↗</span></a></div>
-      </article>
+    <section id="story" class="how-it-works wrap" aria-labelledby="story-heading">
+      <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2 id="story-heading">Your agent leads.<br>Another agent lends a hand.</h2></div>
+      <div class="flow-canvas">
+        <ol class="workflow-steps">
+          <li class="flow-note note-team">
+            <span class="step-number">01</span><h3>Pick your team.</h3><p>A task, an agent, a model.</p>
+            <div class="note-example"><img class="harness-icon" src="/icons/codex.png" width="22" height="22" alt="" /><span>Codex</span><span class="note-handoff" aria-hidden="true">→</span><img class="harness-icon" src="/icons/pi.svg" width="20" height="20" alt="" /><span>Pi</span></div>
+            <svg class="flow-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M5 29C27 4 80 14 63 46C47 73 20 45 47 39C70 34 88 64 88 87M76 77L89 89L97 73" /></svg>
+          </li>
+          <li class="flow-note note-rule">
+            <span class="step-number">02</span><h3>Apply the rule.</h3><p>Tell your agent who can help.</p>
+            <div class="note-example note-policy"><span>can use</span><span aria-hidden="true">/</span><span>should use</span></div>
+            <svg class="flow-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M4 69C31 93 69 76 57 48C48 29 27 42 42 55C63 71 84 40 88 13M77 23L89 11L97 28" /></svg>
+          </li>
+          <li class="flow-note note-work">
+            <span class="step-number">03</span><h3>Keep working.</h3><p>Your subagent takes it from here.</p>
+            <div class="note-example note-result"><svg viewBox="0 0 28 28" width="25" height="25" fill="none" aria-hidden="true"><path d="M22 9C15 1 3 7 5 17S25 27 25 13M9 13L13 18L23 6" /></svg><span>The result comes back.</span></div>
+          </li>
+        </ol>
+      </div>
+      <p class="workflow-note"><a href="#delivery">How the handoff works <span aria-hidden="true">↗</span></a></p>
     </section>
 
-    <section id="download" class="download-section wrap" aria-labelledby="download-heading"><img src="/favicon.svg" width="64" height="64" alt="" /><span class="eyebrow">MAKE THE CONNECTION</span><h2 id="download-heading">A better team.<br>Same favorite tools.</h2><p>A little desktop app for the space between your agents.</p><div class="release-label">Early preview <span id="release-version">0.2.0</span><span>·</span> MIT license</div><div id="downloads" class="mac-download"></div><p class="platforms-soon">Windows &amp; Linux <span>Coming soon</span></p><p class="download-note">Bring Node.js 22.13+ and your installed coding agents.<br>Model access and usage are handled by each harness and its provider.</p><div class="release-links"><a href="https://github.com/Tarachand-Gupta/subagent-bridge/blob/v0.2.0/docs/install-macos.md">Installation guide <span aria-hidden="true">↗</span></a><a id="notes-link" hidden>Release notes <span aria-hidden="true">↗</span></a></div><noscript><p><a href="https://github.com/Tarachand-Gupta/subagent-bridge/releases/download/v0.2.0/Subagent-Bridge_0.2.0_arm64.dmg">Download 0.2.0 for macOS Apple Silicon</a>. Targets macOS 12+. This preview is ad-hoc signed, not notarized; see the installation guide for first-launch approval and setup.</p></noscript></section>
+    <section id="compatibility" class="compatibility wrap" aria-labelledby="compatibility-heading">
+      <div class="compatibility-intro"><span class="eyebrow">CURRENT COVERAGE</span><h2 id="compatibility-heading">Know what connects.</h2><p>Codex, Pi, OpenCode, and DeepSeek can orchestrate. A catalog of 27 agents helps Bridge discover more subagents on your machine.</p><a class="text-link" href="https://github.com/Tarachand-Gupta/subagent-bridge#compatibility-and-maintenance">Integration details <span aria-hidden="true">↗</span></a></div>
+      <details class="compatibility-list">
+        <summary><span>Tested versions &amp; connection methods</span><span aria-hidden="true">+</span></summary>
+        <table>
+          <caption class="sr-only">Coding agents, tested versions, and integration roles</caption>
+          <thead><tr><th scope="col">Agent / tested version</th><th scope="col">As orchestrator</th><th scope="col">As subagent</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span class="agent-name"><img class="harness-icon" src="/icons/codex.png" alt="" width="24" height="24">Codex</span><small>0.160.1</small></th><td>Native hooks</td><td>ACP adapter</td></tr>
+            <tr><th scope="row"><span class="agent-name"><img class="harness-icon" src="/icons/pi.svg" alt="" width="24" height="24">Pi</span><small>1.1.0</small></th><td>Extension</td><td>ACP adapter</td></tr>
+            <tr><th scope="row"><span class="agent-name"><img class="harness-icon" src="/icons/opencode.png" alt="" width="24" height="24">OpenCode</span><small>1.18.34</small></th><td>Plugin</td><td>Built-in ACP</td></tr>
+            <tr><th scope="row"><span class="agent-name"><img class="harness-icon" src="/icons/deepseek.ico" alt="" width="24" height="24">DeepSeek</span><small>Desktop-bundled 0.2.0-rc.2</small></th><td>Native jobs</td><td>ACP profile</td></tr>
+            <tr class="integration-deferred"><th scope="row"><span class="agent-name"><img class="harness-icon" src="/icons/claude.png" alt="" width="24" height="24">Claude Code</span><small>Not live-tested</small></th><td>Deferred</td><td>Unverified adapter</td></tr>
+          </tbody>
+        </table>
+        <p class="coverage-note">Catalog entries are candidates, not 27 verified integrations. Settings distinguishes installed adapters from successful ACP discovery; a live task is still needed to confirm provider access. Claude Code is deferred, and Hermes is planned. Codex and Pi need separate worker adapters. <a href="https://github.com/Tarachand-Gupta/subagent-bridge/blob/v0.3.1/docs/install-macos.md">Setup guide ↗</a></p>
+      </details>
 
-    <section id="questions" class="faq wrap" aria-labelledby="faq-heading"><div><span class="eyebrow">A FEW MORE THINGS</span><h2 id="faq-heading">Good questions.</h2></div><div class="faq-list">
-      <details><summary>Does this replace my coding agent?<span aria-hidden="true">+</span></summary><p>No. You keep working in Codex, Pi, OpenCode, or DeepSeek. Bridge supplies delegation rules and the connection to other harnesses. It’s a companion desktop app, not another coding chat.</p></details>
-      <details><summary>Do I need another model subscription?<span aria-hidden="true">+</span></summary><p>Bridge doesn’t provide model access. Workers use their harness’s existing accounts, API keys, or configured providers. Whether a task consumes a subscription allowance or API credits depends on that setup.</p></details>
-      <details><summary>Does everything stay on my computer?<span aria-hidden="true">+</span></summary><p>Bridge’s configuration and coordination run locally, without a hosted Bridge account. Your coding harnesses still send prompts and code to their configured model providers, just as they normally do. This website has no analytics or tracking cookies.</p></details>
-      <details><summary>Will results arrive in my current chat?<span aria-hidden="true">+</span></summary><p>Supported parent integrations deliver background results to the originating session. Codex desktop hooks deliver during active turns or when a turn stops; an idle chat receives pending results on its next turn. Initial integration setup can require a reload, restart, or hook review.</p></details>
-      <details><summary>What if I select several models or agents?<span aria-hidden="true">+</span></summary><p>They’re alternatives. The parent selects one worker and one model for each task, rather than starting all of them. Thinking settings belong to individual models and only expose the levels the harness supports.</p></details>
-      <details><summary>Which platforms and agents are supported?<span aria-hidden="true">+</span></summary><p>The current desktop build has been tested on macOS Apple Silicon with Codex, Pi, OpenCode, and the desktop-bundled DeepSeek harness. Windows and Linux packaging is configured, but those native builds aren’t verified yet. Claude Code is included in the website preview; its live integration is not yet verified. The 10+ link shows the wider ACP ecosystem, not a list of verified Bridge integrations. Updates can affect compatibility; Settings reports the installed versions and connection state.</p></details>
+    </section>
+
+    <section id="download" class="download-section wrap" aria-labelledby="download-heading">
+      <img src="/favicon.svg" width="64" height="64" alt="" />
+      <h2 id="download-heading">Bring your agents together.</h2>
+      <div id="downloads" class="mac-download"></div>
+      <div id="cli-download" class="cli-download"><a id="cli-package-link" href="https://github.com/Tarachand-Gupta/subagent-bridge/releases/download/v0.3.1/subagent-bridge-local-0.3.1.tgz">Download CLI <span aria-hidden="true">↓</span></a></div>
+      <details class="install-notes">
+        <summary>Install notes <span aria-hidden="true">⌄</span></summary>
+        <div class="install-notes-content">
+          <p class="release-label">Preview <span id="release-version">0.3.1</span><span>·</span> MIT license</p>
+          <p>Requires <span id="cli-requirements">Node.js 22.13+</span> and configured coding agents. The app and CLI share the same rules and configuration.</p>
+          <p id="mac-release-status">Ad-hoc signed preview · not notarized</p>
+          <p id="mac-install-note">First launch may require Open Anyway in macOS Privacy &amp; Security. See the installation guide for setup and worker adapters.</p>
+          <p>Windows &amp; Linux installers · Coming soon</p>
+          <div class="release-links"><a href="https://github.com/Tarachand-Gupta/subagent-bridge/blob/v0.3.1/docs/install-macos.md">Mac guide <span aria-hidden="true">↗</span></a><a id="cli-guide-link" href="https://github.com/Tarachand-Gupta/subagent-bridge/blob/v0.3.1/docs/cli.md">CLI guide <span aria-hidden="true">↗</span></a><a id="notes-link" hidden>Release notes <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </details>
+      <noscript><p><a href="https://github.com/Tarachand-Gupta/subagent-bridge/releases/download/v0.3.1/Subagent-Bridge_0.3.1_arm64.dmg">Download for macOS</a> · Apple Silicon · macOS 12+</p></noscript>
+    </section>
+
+    <section id="questions" class="faq wrap" aria-labelledby="faq-heading"><div><span class="eyebrow">THE DETAILS</span><h2 id="faq-heading">Before you begin.</h2></div><div class="faq-list">
+      <details><summary>Which account pays for the model?<span aria-hidden="true">+</span></summary><p>The subagent uses its harness’s existing account, API key, or provider. Subscription allowances and API charges follow that setup. Bridge does not provide model access or sell another subscription.</p></details>
+      <details><summary>What stays on my computer?<span aria-hidden="true">+</span></summary><p>Bridge’s rules and coordination run locally. Your agents still send prompts and code to their configured model providers. A shared project folder does not copy the whole chat: the orchestrator supplies the context each task needs.</p></details>
+      <details id="delivery"><summary>How do results and follow-ups work?<span aria-hidden="true">+</span></summary><p>Your main agent (the orchestrator) sends a task and the context it needs. The subagent works in the same project folder using its own harness, tools, and account. Independent work can continue in the background. First-time setup may need a reload or hook approval. Supported integrations return results to the session that started the task. Codex hooks deliver during active turns or when a turn stops; an idle chat receives pending results next turn. Follow-ups reuse the same worker conversation while its process is alive. Restarting the harness ends that continuity.</p></details>
+      <details><summary>What do “can use” and “should use” mean?<span aria-hidden="true">+</span></summary><p>“Can use” lets the orchestrator decide whether to delegate. “Should use” instructs it to delegate matching tasks; it cannot guarantee a model will obey. Multiple agents or models are alternatives: the orchestrator picks one of each per task. Bridge enforces those allowed choices when a task runs.</p></details>
     </div></section>
   </main>
-  <section id="open-source" class="open-source wrap" aria-labelledby="source-heading"><div><span class="eyebrow">BUILD IT WITH ME</span><h2 id="source-heading">A small project.<br>Room for your ideas.</h2><p id="source-status">Subagent Bridge is open source under the MIT license, with a macOS preview you can download today. Found a bug or have an idea? Tag <a href="https://x.com/am_tarachand" target="_blank" rel="noopener noreferrer">@am_tarachand</a> on X, or connect on LinkedIn.</p></div><div class="contact-links"><a data-source-link href="https://github.com/Tarachand-Gupta/subagent-bridge"><img class="social-icon" src="/icons/github.svg" width="21" height="21" alt="" /><span id="source-cta">Source on GitHub</span></a><a href="https://x.com/am_tarachand" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="/icons/x.svg" alt="" width="18" height="18" />@am_tarachand <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/tarachand-gupta" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="/icons/linkedin.svg" alt="" width="18" height="18" />Tarachand Gupta <span aria-hidden="true">↗</span></a></div></section>
+  <section id="open-source" class="open-source wrap" aria-labelledby="source-heading"><div><span class="eyebrow">BUILD IT WITH ME</span><h2 id="source-heading">Help connect the next agent.</h2><p id="source-status">Subagent Bridge is open source under the MIT license, with a macOS preview you can download today. Found a bug or have an idea? Tag <a href="https://x.com/am_tarachand" target="_blank" rel="noopener noreferrer">@am_tarachand</a> on X, or connect on LinkedIn.</p></div><div class="contact-links"><a data-source-link href="https://github.com/Tarachand-Gupta/subagent-bridge"><img class="social-icon" src="/icons/github.svg" width="21" height="21" alt="" /><span id="source-cta">Source on GitHub</span></a><a href="https://x.com/am_tarachand" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="/icons/x.svg" alt="" width="18" height="18" />@am_tarachand <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/tarachand-gupta" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="/icons/linkedin.svg" alt="" width="18" height="18" />Tarachand Gupta <span aria-hidden="true">↗</span></a></div></section>
   <footer class="site-footer wrap"><a class="brand" href="#"><img src="/favicon.svg" width="28" height="28" alt="" />Subagent Bridge</a><p>Use other coding agents as subagents—without leaving your own.</p><div class="footer-socials"><a data-source-link href="https://github.com/Tarachand-Gupta/subagent-bridge" aria-label="Source on GitHub"><img class="social-icon" src="/icons/github.svg" width="21" height="21" alt="" /></a><a href="https://x.com/am_tarachand" target="_blank" rel="noopener noreferrer" aria-label="Tarachand on X"><img class="social-icon" src="/icons/x.svg" alt="" width="18" height="18" /></a><a href="https://www.linkedin.com/in/tarachand-gupta" target="_blank" rel="noopener noreferrer" aria-label="Tarachand on LinkedIn"><img class="social-icon" src="/icons/linkedin.svg" alt="" width="18" height="18" /></a></div></footer>
   <script type="module" src="/src/main.js"></script>
 </body>

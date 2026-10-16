@@ -1,14 +1,14 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.1",
   "sourceUrl": "https://github.com/Tarachand-Gupta/subagent-bridge",
-  "releaseNotesUrl": "https://github.com/Tarachand-Gupta/subagent-bridge/releases/tag/v0.2.0",
+  "releaseNotesUrl": "https://github.com/Tarachand-Gupta/subagent-bridge/releases/tag/v0.3.1",
   "platforms": [
     {
       "id": "macos",
       "name": "macOS",
-      "detail": "Apple Silicon \u00b7 macOS 12+ \u00b7 .dmg",
-      "url": "https://github.com/Tarachand-Gupta/subagent-bridge/releases/download/v0.2.0/Subagent-Bridge_0.2.0_arm64.dmg",
-      "status": "Ad-hoc signed preview \u00b7 not notarized",
+      "detail": "Apple Silicon · macOS 12+ · .dmg",
+      "url": "https://github.com/Tarachand-Gupta/subagent-bridge/releases/download/v0.3.1/Subagent-Bridge_0.3.1_arm64.dmg",
+      "status": "Ad-hoc signed preview · not notarized",
       "note": "First launch may require Open Anyway in macOS Privacy & Security. See the installation guide for setup and worker adapters."
     },
     {
@@ -27,5 +27,10 @@
       "status": "Coming soon",
       "note": "Packaging is configured. A Linux release will appear here after native testing."
     }
-  ]
+  ],
+  "cli": {
+    "url": "https://github.com/Tarachand-Gupta/subagent-bridge/releases/download/v0.3.1/subagent-bridge-local-0.3.1.tgz",
+    "guideUrl": "https://github.com/Tarachand-Gupta/subagent-bridge/blob/v0.3.1/docs/cli.md",
+    "requires": "Node.js 22.13+"
+  }
 }
